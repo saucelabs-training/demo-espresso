@@ -7,6 +7,12 @@
 This repository will hold multiple examples on how to run Espresso tests on the Sauce Labs cloud.
 More information on how to use it can be found in each folder.
 
+## Getting started
+Clone the project with 
+
+`git clone https://github.com/saucelabs-training/demo-espresso.git`
+
 ## Examples
+More information can be found here:
 - [Espresso with Android real devices](./real-devices)
 - [Espresso with Android emulators](./emulators)
