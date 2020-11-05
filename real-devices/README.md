@@ -21,7 +21,7 @@ The current release is provided in this release but can also be downloaded from 
 The scripts in this repo were developed on macOS and expect JDK 8 or higher to be installed and available.
 
 ## Setup
-A prebuilt native Android application and it's Espresso test cases are included in this repo. Source to this application can be found on [GitHub](https://github.com/saucelabs/sample-app-mobile).
+A prebuilt native Android application and its Espresso test cases are included in this repo. Source to this application can be found on [GitHub](https://github.com/saucelabs/sample-app-mobile).
 
 The application is bundled in [`SauceLabs.Mobile.Sample.Espresso.App.apk`](./SauceLabs.Mobile.Sample.Espresso.App.apk) and the tests cases are bundled in [`SauceLabs.Mobile.Sample.Espresso.Tests.apk`](./SauceLabs.Mobile.Sample.Espresso.Tests.apk).
 
@@ -30,12 +30,12 @@ The application is bundled in [`SauceLabs.Mobile.Sample.Espresso.App.apk`](./Sau
 The [`SauceLabs.Mobile.Sample.Espresso.App.apk`](./SauceLabs.Mobile.Sample.Espresso.App.apk) file needs to be uploaded to Sauce Labs and an "App Project" needs to be created to reference the app from our test runner.
 Follow these steps to upload the APK and create an App Project:
 
-1. Sign into Sauce Labs at [https://app.saucelabs.com](https://app.saucelabs.com)
-1. Navigate to SAUCE APPS &rarr; Legacy RDC &rarr; + New App &rarr; Android/IOS App.
+1. Sign into Sauce Labs at [https://app.saucelabs.com](https://app.saucelabs.com).
+1. Navigate to **SAUCE APPS &rarr; Legacy RDC &rarr; + New App &rarr; Android/IOS App**.
 1. Follow the prompts to upload the `SauceLabs.Mobile.Sample.Espresso.App.apk` file.
-1. The `App name` will be the name of the project. Give it a descriptive name and replace spaces with for example dashes. 
+1. The `App name` will be the name of the project. Give it a descriptive name so you can recognize it easily. 
 1. Once created, click on the new `Espresso-Swag-Labs-Mobile-App` project.
-1. Navigate to AUTOMATED TESTING &rarr; Espresso/Robotium &rarr; Setup Instructions.
+1. Navigate to **AUTOMATED TESTING &rarr; Espresso/Robotium &rarr; Setup Instructions**.
 1. Copy the value of the `testobject_api_key` and set it as an environment variable in the terminal you are executing your tests from:
 
     ```
@@ -44,12 +44,12 @@ Follow these steps to upload the APK and create an App Project:
     ```
 
 ## Execution
-There are 2 ways of executing Espresso tests on Sauce Labs Real Devices:
+There are two ways of executing Espresso tests on Sauce Labs Real Devices:
 
-1. Through the command line, see this [Sauce Labs Wiki page](https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Real+Devices)
-1. Through a configuration file, see this [Sauce Labs Wiki page](https://wiki.saucelabs.com/display/DOCS/Creating+a+Sauce+Runner+for+Real+Devices+Configuration+File)
+1. Through the command line (**to learn more, see the Sauce Labs Wiki page [Command Reference for Sauce Runner for Real Devices](https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Real+Devices)**)
+1. Through a configuration file (**to learn more, see the Sauce Labs Wiki page [Creating a Sauce Runner for Real Devices Configuration File](https://wiki.saucelabs.com/display/DOCS/Creating+a+Sauce+Runner+for+Real+Devices+Configuration+File)**)
 
-This project has been set up in such a way that it will use `yaml`-configuration files which will be explained in the [Examples](#examples)-section
+This project has been set up in such a way that it will use `yaml`-configuration files, which will be explained in the [Examples](#examples)-section
 
 Executing a test from this repository is a matter of running `run-runner.sh` and passing in the example number (1 ... 6):
 
