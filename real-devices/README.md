@@ -107,7 +107,7 @@ Demonstrates the ability to pick a specific version of Android from the pool of 
 
 ### Example 7 - Single file test annotation
 `runner-ex7.yml` uses Espresso test annotation. 
-Demonstrates the ability to run fout tests based on the `@ErrorFlow`-annotation in a single class,
+Demonstrates the ability to run four tests based on the `@ErrorFlow`-annotation in a single class,
 see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L54).
 
 ### Example 8 - Multi file test annotation

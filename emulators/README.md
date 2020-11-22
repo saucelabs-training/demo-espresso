@@ -7,12 +7,10 @@ of the native framework capability.
 1. [Setup](#setup)
 1. [Execution](#execution)
 1. [Examples](#examples)
-    1. [Example 1 - Minimal configuration for all tests](#example-1---minimal-configuration-for-all-tests)
-    1. [Example 2 - Minimal configuration for 2 tests](#example-2---minimal-configuration-for-2-tests)
-    1. [Example 3 - Run each test on its own device](#example-3---run-each-test-on-its-own-device)
-    1. [Example 4 - Run in parallel on hard-coded devices](#example-4---run-in-parallel-on-hard-coded-devices)
-    1. [Example 5 - Parallel execution using dynamic devices](#example-5---parallel-execution-using-dynamic-devices)
-    1. [Example 6 - Parallel execution by platform version](#example-6---parallel-execution-by-platform-version)
+    1. [Example 1 - Configuration for all tests](#example-1---configuration-for-all-tests)
+    1. [Example 2 - Configuration for 2 tests](#example-2---configuration-for-2-tests)
+    1. [Example 3 - Run one test on 2 devices](#example-3---run-one-test-on-2-devices)
+    1. [Example 4 - Exclude 1 test](#example-4---exclude-1-test)
 
 ## Prerequisites
 The test runner used by Sauce Labs to execute the Espresso tests is a downloadable file.
@@ -46,7 +44,7 @@ see the image below.
 ![Accept blocked runner](./assets/blocked.png)
 
 ## Examples
-There are four examples provided starting from the most basic and moving up to more advanced approaches. 
+There are 6 examples provided starting from the most basic and moving up to more advanced approaches. 
 More options can be found on the [Sauce Labs Wiki](https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Virtual+Devices).
 
 ### Example 1 - Configuration for all tests
@@ -59,4 +57,14 @@ More options can be found on the [Sauce Labs Wiki](https://wiki.saucelabs.com/di
 `runner-ex3.yml`: In this example, there is one test which is executed on 2 devices.
 
 ### Example 4 - Exclude 1 test
-`runner-ex1.sh`: In this example, all test cases are executed on a single emulator in sequential order except for 1.
+`runner-ex4.sh`: In this example, all test cases are executed on a single emulator in sequential order except for 1.
+
+### Example 5 - Single file test annotation
+`runner-ex5.sh`: Demonstrates the ability to run four tests based on the `@ErrorFlow`-annotation in a single class,
+see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L54).
+
+### Example 6 - Multi file test annotation
+`runner-ex6.sh`: Demonstrates the ability to run two tests based on the `@HappyFlow`-annotation which are found in two classes,
+see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L34)
+and [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt#L35).
+
