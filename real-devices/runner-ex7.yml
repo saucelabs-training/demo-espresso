@@ -1,0 +1,39 @@
+---
+# See these links for details:
+#   * https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Real+Devices
+#   * https://wiki.saucelabs.com/display/DOCS/Creating+a+Sauce+Runner+for+Real+Devices+Configuration+File
+#   * https://wiki.saucelabs.com/display/DOCS/Examples+of+Device+Specifications+for+the+Real+Device+Runner
+
+
+# Test framework: "xcuitest" or "espresso"
+testFramework: espresso
+
+# Path to the app's .ipa or .app.
+app: ./SauceLabs.Mobile.Sample.Espresso.App.apk
+
+# Path to the test runner app's .ipa or .app.
+test: ./SauceLabs.Mobile.Sample.Espresso.Tests.apk
+
+# Path where XML test reports will be saved.
+xmlFolder: ./reports
+
+# Interval in seconds to check test results. Default is 30.
+checkFrequency: 10
+
+# Define a list of devices on which the tests should be executed.
+devices:
+
+  # Example 7: Single file test annotation
+  #  Run four tests on a random Android 10 device in my pool, this can be US/EU.
+  #  The tests will be ran based on the `@ErrorFlow` which can be found in
+  #  LoginTest.kt
+  - datacenter: EU
+    testname: Sauce Labs Espresso Tests from Example 7 - @ErrorFlow Annotation
+    platformVersion: 10
+
+    # For Espresso testing, various keys can be passed (only one type of each key!).
+    # See the Android documentation for more details:
+    # https://developer.android.com/studio/test/command-line#RunTestExamples
+    envs:
+    - key: annotation
+      value: com.swaglabsmobileapp.ErrorFlow
