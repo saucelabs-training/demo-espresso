@@ -15,6 +15,7 @@ of the native framework capability.
     1. [Example 6 - Parallel execution by platform version](#example-6---parallel-execution-by-platform-version)
     1. [Example 7 - Single file test annotation](#example-7---single-file-test-annotation)
     1. [Example 8 - Multi file test annotation](#example-8---multi-file-test-annotation)
+    1. [Example 9 - Single execution by using an already uploaded app](#example-9---single-execution-by-using-an-already-uploaded-app)
 
 ## Prerequisites
 The test runner used by Sauce Labs to execute the Espresso tests is a downloadable Java jar file.
@@ -69,7 +70,7 @@ There are 2 ways of executing Espresso tests on Sauce Labs Real Devices:
 This project has been set up in such a way that it will use `yaml`-configuration files which will be explained in the 
 [Examples](#examples)-section
 
-Executing a test from this repository is a matter of running `run-runner.sh` and passing in the example number (1 ... 6):
+Executing a test from this repository is a matter of running `run-runner.sh` and passing in the example number (1 ... 9):
 
 ```bash
 $ ./run-runner.sh 1
@@ -115,3 +116,11 @@ see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/ap
 Demonstrates the ability to run two tests based on the `@HappyFlow`-annotation which are found in two classes,
 see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L34)
 and [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt#L35).
+
+### Example 9 - Single execution by using an already uploaded app
+`runner-ex9.yml` uses only uses the appId of an already uploaded app.
+This can be retrieved by going to:
+
+1. Sign into Sauce Labs at [https://app.saucelabs.com](https://app.saucelabs.com)
+1. Navigate to **SAUCE APPS &rarr; Legacy RDC &rarr; Your App Project**
+1. When you are on the dashboard go to **All Versions &rarr; Select a number from the app**
