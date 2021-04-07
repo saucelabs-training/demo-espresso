@@ -47,6 +47,8 @@ see the image below.
 There are 6 examples provided starting from the most basic and moving up to more advanced approaches. 
 More options can be found on the [Sauce Labs Wiki](https://wiki.saucelabs.com/display/DOCS/Command+Reference+for+Sauce+Runner+for+Virtual+Devices).
 
+> **Note:** To use the runner, make sure you have access to virtual devices the same datacenter as listed in the examples below before running. Also note that to run an example in terminal, you need to append `./` from the `/emulators` directory (`./runner-ex1.sh`)
+
 ### Example 1 - Configuration for all tests
 `runner-ex1.sh`: In this example, all test cases are executed on a single emulator in sequential order.
 
