@@ -1,0 +1,47 @@
+# Example 3: Run each test on its own device
+# Run two tests on separately available devices in my pool, this can be US/EU
+
+apiVersion: v1alpha
+kind: espresso
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  # Controls how many suites are executed at the same time (sauce test env only).
+  concurrency: 10
+  metadata:
+    name: Testing Espresso Support
+    tags:
+      - android
+      - espresso
+      - ex3
+    build: Sauce Espresso
+
+espresso:
+  app: ./apps/SauceLabs.Mobile.Sample.Espresso.App.apk
+  testApp: ./apps/SauceLabs.Mobile.Sample.Espresso.Tests.apk
+
+suites:
+  - name: "Sauce Labs Espresso Tests from Example 3 - successfulLogin"
+    testOptions:
+      class: ["com.swaglabsmobileapp.LoginTest#successfulLogin"]
+    devices:
+      - name: "Samsung.*"
+        options:
+          # Possible values [ANY,PHONE,TABLET]
+          deviceType: PHONE
+  - name: "Sauce Labs Espresso Tests from Example 3 - noUsernameLogin"
+    testOptions:
+      class: ["com.swaglabsmobileapp.LoginTest#noUsernameLogin"]
+    devices:
+      - name: "Samsung.*"
+        options:
+          # Possible values [ANY,PHONE,TABLET]
+          deviceType: PHONE
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - junit.xml
+    directory: ./reports/

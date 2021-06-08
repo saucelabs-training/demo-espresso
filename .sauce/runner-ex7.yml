@@ -1,0 +1,38 @@
+# Example 7: Single file test annotation
+#  Run four tests on a random Android 10 device in my pool, this can be US/EU.
+#  The tests will be ran based on the `@ErrorFlow` which can be found in
+#  LoginTest.kt
+
+apiVersion: v1alpha
+kind: espresso
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  # Controls how many suites are executed at the same time (sauce test env only).
+  concurrency: 10
+  metadata:
+    name: Testing Espresso Support
+    tags:
+      - android
+      - espresso
+      - ex7
+    build: Sauce Espresso
+
+espresso:
+  app: ./apps/SauceLabs.Mobile.Sample.Espresso.App.apk
+  testApp: ./apps/SauceLabs.Mobile.Sample.Espresso.Tests.apk
+
+suites:
+  - name: "Sauce Labs Espresso Tests from Example 7 - @ErrorFlow Annotation"
+    testOptions:
+      annotation: com.swaglabsmobileapp.ErrorFlow
+    devices:
+      - name: "Samsung.*"
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - junit.xml
+    directory: ./reports/
