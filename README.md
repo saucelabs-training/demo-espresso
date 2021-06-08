@@ -17,9 +17,11 @@ More information on how to use it can be found below and in each folder.
 > [Legacy RDC](https://github.com/saucelabs-training/demo-espresso/tree/legacy-rdc) branch. Mind the fact that the
 > Legacy RDC will be EOL in September 2021.
 
-## What You'll Need
-The steps below illustrate one of the quickest ways to get set up. If you'd like a more in-depth guide, please check out
-our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation).
+## Prerequisites
+- Please check our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation) for installing SauceCTL
+- Make sure you've set up your credentials on your local machine and or CI-pipeline, see
+  [this](https://docs.saucelabs.com/testrunner-toolkit/installation#associating-your-sauce-labs-account)-doc
+- Check the [Espresso](https://docs.saucelabs.com/testrunner-toolkit/configuration/espresso/index.html)-docs for all options
 
 ### Install `saucectl`
 ```shell
