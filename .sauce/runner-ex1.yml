@@ -1,0 +1,37 @@
+# Example 1: minimal configuration.
+# Run all tests on any available *single* device in my pool, this can be US/EU
+
+apiVersion: v1alpha
+kind: espresso
+sauce:
+  # This can be `eu-central-1` or  `us-west-1`
+  region: eu-central-1
+  # Controls how many suites are executed at the same time (sauce test env only).
+  concurrency: 10
+  metadata:
+    name: Testing Espresso Support
+    tags:
+      - android
+      - espresso
+      - ex1
+    build: Sauce Espresso
+
+espresso:
+  app: ./apps/SauceLabs.Mobile.Sample.Espresso.App.apk
+  testApp: ./apps/SauceLabs.Mobile.Sample.Espresso.Tests.apk
+
+suites:
+  - name: "Sauce Labs Espresso Tests from Example 1 - All tests"
+    devices:
+      - name: "Samsung.*"
+        options:
+          # Possible values [ANY,PHONE,TABLET]
+          deviceType: PHONE
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: always
+    match:
+      - junit.xml
+    directory: ./reports/
