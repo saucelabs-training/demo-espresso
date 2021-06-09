@@ -26,12 +26,12 @@ suites:
     testOptions:
       class: ["com.swaglabsmobileapp.LoginTest#noPasswordLogin"]
     devices:
-      - name: Samsung_Galaxy_S20_real
+      - id: Samsung_Galaxy_S20_real
   - name: "Sauce Labs Espresso Tests from Example 4 - noMatchLogin"
     testOptions:
       class: ["com.swaglabsmobileapp.LoginTest#noMatchLogin"]
     devices:
-      - name: Samsung_Galaxy_S10_Plus_real
+      - id: Samsung_Galaxy_S10_Plus_real
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
