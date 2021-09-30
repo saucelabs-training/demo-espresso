@@ -56,44 +56,53 @@ The `#` stands for the number of the below mentioned examples.
 ### Example 1 - Minimal configuration for all tests
 [`runner-ex1.yml`](/.sauce/runner-ex1.yml) provides a minimum configuration needed to run the Espresso tests.
 In this example, all test cases are executed on a single, available device in sequential order.\
-![Example 1 - Minimal configuration for all tests](https://github.com/saucelabs-training/demo-espresso/workflows/Espresso%20-%20Example%201%20/badge.svg)
+[![Espresso - Example 1](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-1.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-1.yml)
 
 ### Example 2 - Minimal configuration for 2 tests
 [`runner-ex2.yml`](/.sauce/runner-ex2.yml) provides a minimum configuration needed to run the Espresso tests.
-In this example, there are two test cases executed on a single, available device in sequential order.
+In this example, there are two test cases executed on a single, available device in sequential order.\
+[![Espresso - Example 2](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-2.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-2.yml)
 
 ### Example 3 - Run each test on its own device
-[`runner-ex3.yml`](/.sauce/runner-ex3.yml) breaks apart the execution of the two test cases such that they can run in parallel on separate devices
-that are available (ie., not in use) in the pool.
+[`runner-ex3.yml`](/.sauce/runner-ex3.yml) breaks apart the execution of the two test cases such that they can run in 
+parallel on separate devices that are available (ie., not in use) in the pool.\
+[![Espresso - Example 3](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-3.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-3.yml)
 
 ### Example 4 - Run in parallel on hard-coded devices
-[`runner-ex4.yml`](/.sauce/runner-ex4.yml) modifies the second example by specifying which device in the pool to execute each test on.
-Still uses parallel execution.
+[`runner-ex4.yml`](/.sauce/runner-ex4.yml) modifies the second example by specifying which device in the pool to execute 
+each test on. Still uses parallel execution.\
+[![Espresso - Example 4](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-4.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-4.yml)
 
 ### Example 5 - Parallel execution using dynamic devices
-[`runner-ex5.yml`](/.sauce/runner-ex5.yml) uses the `deviceNameQuery` capability to look for available devices using wildcard names.
-This example demonstrates the ability to run a specified test(s) on a pool devices that are configured the same but have
-different names for parallel processing.
+[`runner-ex5.yml`](/.sauce/runner-ex5.yml) uses the `deviceNameQuery` capability to look for available devices using 
+wildcard names. This example demonstrates the ability to run a specified test(s) on a pool devices that are configured 
+the same but have different names for parallel processing.\
+[![Espresso - Example 5](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-5.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-5.yml)
 
 ### Example 6 - Parallel execution by platform version
 [`runner-ex6.yml`](/.sauce/runner-ex6.yml) uses only the `platformVersion` field to select an available device.
-Demonstrates the ability to pick a specific version of Android from the pool of devices for executing tests in parallel.
+Demonstrates the ability to pick a specific version of Android from the pool of devices for executing tests in parallel.\
+[![Espresso - Example 6](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-6.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-6.yml)
 
 ### Example 7 - Single file test annotation
 [`runner-ex7.yml`](/.sauce/runner-ex7.yml) uses Espresso test annotation.
 Demonstrates the ability to run four tests based on the `@ErrorFlow`-annotation in a single class,
-see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L54).
+see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L54).\
+[![Espresso - Example 7](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-7.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-7.yml)
 
 ### Example 8 - Multi file test annotation
 [`runner-ex8.yml`](/.sauce/runner-ex8.yml) uses Espresso test annotation.
 Demonstrates the ability to run two tests based on the `@HappyFlow`-annotation which are found in two classes,
 see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L34)
-and [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt#L35).
+and [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt#L35).\
+[![Espresso - Example 8](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml)
 
 ### Example 9 - Single execution on Android Emulators and Android Real Devices
-[`runner-ex9.yml`](/.sauce/runner-ex9.yml) runs espresso tests on both Android Emulators **AND** Android Real Devices.
+[`runner-ex9.yml`](/.sauce/runner-ex9.yml) runs espresso tests on both Android Emulators **AND** Android Real Devices.\
+[![Espresso - Example 9](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml)
 
 ### Example 10 - Shard all tests over multiple instances
-[`runner-ex10.yml`](/.sauce/runner-ex10.yml) runs espresso all tests on multiple Android Real Devices and Android Emulators by automatically
-sharding the tests. `saucectl` automatically creates the sharded jobs for each of the devices defined for the suite
-based on the number of shards you specify. 
+[`runner-ex10.yml`](/.sauce/runner-ex10.yml) runs espresso all tests on multiple Android Real Devices and Android 
+Emulators by automatically sharding the tests. `saucectl` automatically creates the sharded jobs for each of the devices 
+defined for the suite based on the number of shards you specify.\
+[![Espresso - Example 10](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml) 

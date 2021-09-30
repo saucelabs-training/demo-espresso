@@ -1,4 +1,4 @@
-name: Espresso - Example 1
+name: Espresso - Example 10
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
   schedule:
-    - cron:  '0 1 * * 0'
+    - cron:  '18 1 * * 0'
 
 env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
@@ -26,5 +26,5 @@ jobs:
           testing-environment: ""
           concurrency: 10
 
-      - name: Espresso - Example 1
-        run: saucectl run --config ./.sauce/runner-ex1.yml
+      - name: Espresso - Example 10
+        run: saucectl run --config ./.sauce/runner-ex10.yml
