@@ -10,12 +10,8 @@
 ## Introduction
 This repository will hold multiple examples on how to run Espresso tests on the Sauce Labs cloud. This can be on Android
 Emulators, Sauce Labs Android real devices or **both at the same time**,
-see [example 9](#example-9---single-execution-on-android-emulators-and-android-real-devices)!
+see [example 8](#example-8---single-execution-on-android-emulators-and-android-real-devices)!
 More information on how to use it can be found below and in each folder.
-
-> **NOTE:** If you want to see examples using the Legacy RDC then please check the
-> [Legacy RDC](https://github.com/saucelabs-training/demo-espresso/tree/legacy-rdc) branch. Mind the fact that the
-> Legacy RDC will be EOL in September 2021.
 
 ## Prerequisites
 - Please check our [documentation](https://docs.saucelabs.com/testrunner-toolkit/installation) for installing SauceCTL
@@ -32,18 +28,11 @@ curl -L https://saucelabs.github.io/saucectl/install | bash
 
 ## Apps
 A prebuilt native Android application and it's Espresso test cases are included in this repo. Source to this application
-can be found on GitHub in this [folder](https://github.com/saucelabs/sample-app-mobile/tree/master/android/app/src/androidTest/java/com/swaglabsmobileapp).
-The two test-classes can be found here:
+can be found on GitHub in this [folder](https://github.com/saucelabs/my-demo-app-android).
+The test-classes can be found [here](https://github.com/saucelabs/my-demo-app-android/tree/main/app/src/androidTest/java/com/saucelabs/mydemoapp/android/view/activities).
 
-- [com.swaglabsmobileapp.LoginTest](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt)
-- [com.swaglabsmobileapp.SwagLabsFlow](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt)
-
-The application is bundled in [`SauceLabs.Mobile.Sample.Espresso.App.apk`](apps/SauceLabs.Mobile.Sample.Espresso.App.apk)
-and the tests cases are bundled in [`SauceLabs.Mobile.Sample.Espresso.Tests.apk`](apps/SauceLabs.Mobile.Sample.Espresso.Tests.apk).
-
-Screenshots will automatically be uploaded to Sauce Labs and are added by [Spoon](https://github.com/square/spoon) and
-the [spoon-gradle-plugin](https://github.com/stanfy/spoon-gradle-plugin). See also the above mentioned classes for the
-implementation of Spoon.
+The application is bundled in [`mda-1.0.8-10.apk`](apps/mda-1.0.8-10.apk)
+and the tests cases are bundled in [`mda-androidTest-1.0.8-10.apk`](apps/mda-androidTest-1.0.8-10.apk).
 
 ## Examples
 All below mentioned examples can be found in the [`.sauce`](/.sauce)-folder. You can run the configurations by running
@@ -90,19 +79,12 @@ Demonstrates the ability to run four tests based on the `@ErrorFlow`-annotation 
 see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L54).\
 [![Espresso - Example 7](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-7.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-7.yml)
 
-### Example 8 - Multi file test annotation
-[`runner-ex8.yml`](/.sauce/runner-ex8.yml) uses Espresso test annotation.
-Demonstrates the ability to run two tests based on the `@HappyFlow`-annotation which are found in two classes,
-see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/LoginTest.kt#L34)
-and [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/app/src/androidTest/java/com/swaglabsmobileapp/SwagLabsFlow.kt#L35).\
+### Example 8 - Single execution on Android Emulators and Android Real Devices
+[`runner-ex8.yml`](/.sauce/runner-ex8.yml) runs espresso tests on both Android Emulators **AND** Android Real Devices.\
 [![Espresso - Example 8](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml)
 
-### Example 9 - Single execution on Android Emulators and Android Real Devices
-[`runner-ex9.yml`](/.sauce/runner-ex9.yml) runs espresso tests on both Android Emulators **AND** Android Real Devices.\
-[![Espresso - Example 9](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml)
-
-### Example 10 - Shard all tests over multiple instances
-[`runner-ex10.yml`](/.sauce/runner-ex10.yml) runs espresso all tests on multiple Android Real Devices and Android 
+### Example 9 - Shard all tests over multiple instances
+[`runner-ex9.yml`](/.sauce/runner-ex10.yml) runs espresso all tests on multiple Android Real Devices and Android 
 Emulators by automatically sharding the tests. `saucectl` automatically creates the sharded jobs for each of the devices 
 defined for the suite based on the number of shards you specify.\
-[![Espresso - Example 10](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml) 
+[![Espresso - Example 9](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml) 
