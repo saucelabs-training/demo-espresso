@@ -1,7 +1,5 @@
-# Example 8: Multi file test annotation
-#  Run 2 tests on a random Android 10 device in my pool, this can be US/EU.
-#  The tests will be ran based on the `@HappyFlow` which can be found in
-#  LoginTest.kt
+# Example 8: Single execution on Android Emulators and Android Real Devices
+# Run all tests on any available *single* device in my pool, this can be US/EU
 
 apiVersion: v1alpha
 kind: espresso
@@ -10,23 +8,34 @@ sauce:
   region: eu-central-1
   # Controls how many suites are executed at the same time (sauce test env only).
   concurrency: 10
-  metadata:
-    tags:
-      - android
-      - espresso
-      - ex7
-    build: Sauce Espresso
 
 espresso:
-  app: ./apps/SauceLabs.Mobile.Sample.Espresso.App.apk
-  testApp: ./apps/SauceLabs.Mobile.Sample.Espresso.Tests.apk
+  app: ./apps/my-demo-app-android.apk
+  testApp: ./apps/my-demo-app-android-tests.apk
 
 suites:
-  - name: "Sauce Labs Espresso Tests from Example 8 - @HappyFlow Annotation"
+  - name: "Example 8 - succesfulLoginTest on an Emulator and Real Device"
     testOptions:
-      annotation: com.swaglabsmobileapp.HappyFlow
+      class: 
+        - com.saucelabs.mydemoapp.android.view.activities.LoginTest#succesfulLoginTest
     devices:
       - name: "Samsung.*"
+        options:
+          # Possible values [ANY,PHONE,TABLET]
+          deviceType: PHONE
+    emulators:
+      - name: "Google Pixel C GoogleAPI Emulator"
+        orientation: landscape
+        platformVersions:
+          - "8.1"
+  - name: "Example 8 - noUsernameLoginTest on an Emulator"
+    testOptions:
+      class:
+        - com.saucelabs.mydemoapp.android.view.activities.LoginTest#noUsernameLoginTest
+    emulators:
+      - name: "Android GoogleApi Emulator"
+        platformVersions:
+          - "11.0"
 
 # Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
 artifacts:
