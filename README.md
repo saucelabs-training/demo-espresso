@@ -84,7 +84,7 @@ see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/ap
 [![Espresso - Example 8](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-8.yml)
 
 ### Example 9 - Shard all tests over multiple instances
-[`runner-ex9.yml`](/.sauce/runner-ex10.yml) runs espresso all tests on multiple Android Real Devices and Android 
+[`runner-ex9.yml`](/.sauce/runner-ex9.yml) runs espresso all tests on multiple Android Real Devices and Android 
 Emulators by automatically sharding the tests. `saucectl` automatically creates the sharded jobs for each of the devices 
 defined for the suite based on the number of shards you specify.\
 [![Espresso - Example 9](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml) 
