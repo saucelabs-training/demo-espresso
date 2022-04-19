@@ -18,7 +18,7 @@ espresso:
 suites:
   - name: "Example 7: By test annotation - @ErrorFlow Annotation"
     testOptions:
-      annotation: com.saucelabs.mydemoapp.android.view.ErrorFlow
+      annotation: com.saucelabs.mydemoapp.android.ErrorFlow
     devices:
       - name: "Samsung.*"
 
