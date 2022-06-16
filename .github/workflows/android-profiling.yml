@@ -32,6 +32,7 @@ jobs:
 
       - name: Connect and Install Apps
         run: |
+          adb -P 7000 start-server &
           adb connect localhost:7000 &
           adb install ./apps/my-demo-app-android.apk
           adb install ./apps/my-demo-app-android-tests.apk
