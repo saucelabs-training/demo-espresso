@@ -19,7 +19,7 @@ jobs:
 
       - name: wget
         uses: wei/wget@v1
-      	with:
+        with:
           args:  https://saucelabs-vusb.s3-eu-west-1.amazonaws.com/v2.0.1/virtual-usb-client.jar
 
       - name: Connect and Install Apps
