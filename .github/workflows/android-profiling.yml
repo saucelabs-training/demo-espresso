@@ -32,8 +32,8 @@ jobs:
 
       - name: Connect and Install Apps
         run: |
-          adb -P 7000 start-server &
-          adb connect localhost:7000 &
+          adb -P 7001 start-server &
+          adb connect localhost:7001 &
           adb install ./apps/my-demo-app-android.apk
           adb install ./apps/my-demo-app-android-tests.apk
           adb shell am instrument -w com.example.benchmark/androidx.benchmark.junit4.AndroidBenchmarkRunner &
