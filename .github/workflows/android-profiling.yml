@@ -1,0 +1,31 @@
+name: build
+
+jobs:
+  build:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Get VUSB Client
+        uses: wei/wget@v1
+      	with:
+          args:  https://saucelabs-vusb.s3-eu-west-1.amazonaws.com/v2.0.1/virtual-usb-client.jar
+
+      - name: Connect and Install Apps
+        run: |
+          adb connect localhost:7000 &
+          adb install ./apps/my-demo-app-android.apk
+          adb install ./apps/my-demo-app-android-tests.apk
+          adb shell am instrument -w com.example.benchmark/androidx.benchmark.junit4.AndroidBenchmarkRunner &
+          adb shell am instrument -w -e -no-isolatd-storage true -e additionalTestOutputDir /sdcard/Download/ com.example.benchmark/androidx.benchmark.junit4.AndroidBenchmarkRunner
+          adb shell find /sdcard/Download -name "*-benchmarkData.json" | tr -d '\r' | xargs -n1 adb pull
