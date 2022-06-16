@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - name: Checkout
-        suses: actions/checkout@v1
+        uses: actions/checkout@v1
 
       - name: Setup Java
         uses: actions/setup-java@v1
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Get VUSB Client
+      - name: wget
         uses: wei/wget@v1
       	with:
           args:  https://saucelabs-vusb.s3-eu-west-1.amazonaws.com/v2.0.1/virtual-usb-client.jar
