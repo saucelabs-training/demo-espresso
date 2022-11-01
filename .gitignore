@@ -1,3 +1,4 @@
 **/reports/
 **/junit-reports/
 .idea
+.DS_Store
