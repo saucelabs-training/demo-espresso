@@ -26,5 +26,5 @@ jobs:
           testing-environment: ""
           concurrency: 10
 
-      - name: Espresso - Example 9
+      - name: Espresso - Example 8
         run: saucectl run --config ./.sauce/runner-ex8.yml

@@ -8,6 +8,10 @@ sauce:
   region: eu-central-1
   # Controls how many suites are executed at the same time (sauce test env only).
   concurrency: 10
+  metadata:
+    tags:
+      - example4
+      - testOnRealAndEmulator
 
 espresso:
   app: ./apps/my-demo-app-android.apk

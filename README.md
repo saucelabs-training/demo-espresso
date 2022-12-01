@@ -88,3 +88,7 @@ see [here](https://github.com/saucelabs/sample-app-mobile/blob/master/android/ap
 Emulators by automatically sharding the tests. `saucectl` automatically creates the sharded jobs for each of the devices 
 defined for the suite based on the number of shards you specify.\
 [![Espresso - Example 9](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-9.yml) 
+
+### Example 10 - Take and store screenshots for RDC
+[`runner-ex10.yml`](/.sauce/runner-ex10.yml) runs an espresso test that will create two screenshots and stores it in the test session on Sauce Labs
+[![Espresso - Example 10](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml/badge.svg)](https://github.com/saucelabs-training/demo-espresso/actions/workflows/example-10.yml) 
